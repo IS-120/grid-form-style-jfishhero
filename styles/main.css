@@ -328,6 +328,10 @@ header ul {
 }
 
 /* Contact Page Stuff */
+.contact {
+  line-height: 1;
+}
+
 .contact form {
   display: grid;
 }
@@ -345,6 +349,11 @@ header ul {
   row-gap: 1rem;
   margin-top: 2rem;
   align-items: center;
+  margin-bottom: 2rem;
+}
+
+.contact input[type="email"] {
+  margin-bottom: 2rem;
 }
 
 .contact fieldset {
@@ -491,6 +500,8 @@ input[type="radio"] {
 
   .contact form > label {
     justify-self: right;
+    text-align: right;
+    line-height: 1;
   }
 
   .contact .fieldset-wrapper {
