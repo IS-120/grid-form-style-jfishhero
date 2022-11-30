@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Contact us</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="contact">
+  <!--Favicons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+  <link rel="manifest" href="../images/site.webmanifest">
+  <link rel="mask-icon" href="../images/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="../images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!--Reset-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!--Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!--Main Css-->
+  <link rel="stylesheet" href="../styles/main.css">
+
+</head>
+
+<body class="contact">
+  <header>
+    <nav>
+      <div class="menu-icon">
+        <svg viewbox="0 0 60 60" width="40px" height="40px">
+          <line x1="5%" y1="50%" x2="95%" y2="50%" />
+          <line x1="5%" y1="50%" x2="95%" y2="50%" />
+        </svg>
+      </div>
+
+      <ul>
+        <li><a href="../">Home</a></li>
+        <li><a href="../about/">About</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Contact</h1>
+  <main>
+    <div class="image-wrapper">
+      <img src="../images/door_icon.svg" alt="a simple door with a round knob">
+    </div>
+
+    <!--Form-->
+    <form>
+      <label for="textfield">Please tell us the name you wish you had:</label>
+      <input type="text" id="textfield" name="desired-name">
+
+      <label for="email">Please give us an email:</label>
+      <input type="email" id="email" name="email" placeholder="Note that you will never ever be able to unsubscribe"
+        required>
+
+      <div class="fieldset-wrapper">
+        <fieldset>
+          <legend>Select all the attributes that apply to you:</legend>
+
+
+          <input type="checkbox" id="seen_it" name="seen" value="seen_it">
+          <label for="seen_it">I have seen the Great Xaxtic One</label>
+
+
+          <input type="checkbox" id="not_seen" name="seen" value="not_seen">
+          <label for="not_seen">I have NOT seen the Great Xaxtic One (and am extremely jealous)</label>
+
+
+          <input type="checkbox" id="neither" name="seen" value="neither">
+          <label for="neither">I have neither seen nor not seen the Great Xaxtic One</label>
+
+
+          <input type="checkbox" id="unsee" name="seen" value="unsee">
+          <label for="unsee">I cannot UNSEE the Great Xaxtic One (This is correct)</label>
+        </fieldset>
+      </div>
+
+      <div class="fieldset-wrapper">
+        <fieldset>
+          <legend>Whom do you fear most?</legend>
+
+
+          <input type="radio" id="charlene" name="fear" value="charlene">
+          <label for="charlene">Charlene the Loudly Snoring Tree</label>
+
+
+          <input type="radio" id="eyes" name="fear" value="eyes">
+          <label for="eyes">The Too Terrible Eyes</label>
+
+
+          <input type="radio" id="bespoken" name="fear" value="bespoken">
+          <label for="bespoken">Witch of the Bespoken Un-names</label>
+
+
+          <input type="radio" id="comma" name="fear" value="comma">
+          <label for="comma">This Misplaced Comma , </label>
+        </fieldset>
+      </div>
+
+      <label for="textarea">Please describe how we could make you less comfortable today:</label>
+      <textarea id="textarea" name="comfort" rows="5" cols="30"
+        placeholder="Pack me in a suitcase, Expose me to the void, Fill inbox with Spam Messages, etc."></textarea>
+
+      <button class="button">All my answers are legally binding</button>
+
+
+    </form>
+
+  </main>
+
+  <!--JavaScript-->
+  <script>
+    document.querySelector(".menu-icon").addEventListener("click", function () {
+      this.parentElement.classList.toggle("close");
+    });
+  </script>
+</body>
+
+</html>
