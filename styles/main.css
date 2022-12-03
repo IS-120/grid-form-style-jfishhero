@@ -442,6 +442,35 @@ input[type="radio"] {
   color: var(--dark-mystery);
 }
 
+/* HIDDEN class */
+.contact .hidden {
+  display: none;
+}
+
+/* LOADER */
+.loader {
+  border: 1px solid var(--calming-whisper);
+  width: 700px;
+  height: 30px;
+  background-color: var(--calming-whisper);
+}
+
+.indicator {
+  transform: translatex(-50px);
+  transform-origin: left;
+  animation: run 5s infinite linear;
+  filter: drop-shadow(-5px 5px 3px var(--soothing-sage));
+}
+
+@keyframes run {
+  0% {
+    transform: translatex(-50px);
+  }
+  100% {
+    transform: translatex(650px);
+  }
+}
+
 /* Media queries */
 @media (min-width: 401px) {
   /* tablet CSS */

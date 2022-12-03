@@ -64,7 +64,7 @@
     </div>
 
     <!--Form-->
-    <form>
+    <form name="soulHarvester">
       <label for="textfield">Desired Name:</label>
       <input type="text" id="textfield" name="desired-name">
 
@@ -124,13 +124,68 @@
 
     </form>
 
+    <!--Submission Message-->
+    <p class="submitted hidden">Thank you for your response! Your soul will be harvested in the next 2-5 business
+      days</p>
+
+    <!--loader-->
+    <div class="loader hidden">
+      <img class="indicator" src="https://www.pngplay.com/wp-content/uploads/2/Running-Man-Black-Transparent-PNG.png">
+    </div>
+
   </main>
 
-  <!--JavaScript-->
+  <!--JavaScript for Menu-->
   <script>
     document.querySelector(".menu-icon").addEventListener("click", function () {
       this.parentElement.classList.toggle("close");
     });
+  </script>
+
+  <!--Javascript for Form-->
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw-ZDcx1UYdUBBUqADp6Nq_b4gPVAUVbiSCqSwxqCNZuPyjXcieLgHLS_W7YxCox6fPBw/exec'
+    const form = document.forms['soulHarvester']
+    const submissionMessage = document.querySelector('.submitted')
+    const loader = document.querySelector('.loader')
+    const checkboxName = "seen"
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+
+      form.classList.add('hidden')
+      loader.classList.remove('hidden')
+
+      let fd = new FormData(form);
+
+      let checkBoxValues = fd.getAll(checkboxName)
+
+      fd.delete(checkboxName)
+
+      let text = ""
+      if (checkBoxValues.length <= 2) {
+        text = checkBoxValues.join(" and ")
+      } else {
+        let end = checkBoxValues.pop();
+        text = checkBoxValues.join(", ");
+        text += ", and " + end;
+      }
+
+      fd.append(checkboxName, text);
+
+
+      fetch(scriptURL, { method: 'POST', body: fd, })
+        .then(response => {
+          loader.classList.add('hidden')
+          if (response.ok) {
+            console.log('Success!', response)
+            submissionMessage.classList.remove('hidden')
+          } else {
+            console.log('Error has occurred', response)
+          }
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
   </script>
 </body>
 
