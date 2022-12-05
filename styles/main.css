@@ -462,6 +462,19 @@ input[type="radio"] {
   filter: drop-shadow(-5px 5px 3px var(--soothing-sage));
 }
 
+/* video styles */
+video {
+  display: block;
+  /* height: 100%;
+  width: 100%; */
+  object-fit: cover;
+}
+
+.video-wrapper {
+  height: 100vh;
+  width: 100%;
+}
+
 @keyframes run {
   0% {
     transform: translatex(-50px);
